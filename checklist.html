@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Test Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style id="app-css">
+  :root {
+    --paper:#F6F7F9; --card:#FFFFFF; --sunk:#ECEEF2;
+    --ink:#14171D; --ink-2:#4A5260; --ink-3:#7C8494;
+    --line:#DDE1E8; --line-2:#EBEEF3;
+    --brand:#26346B; --brand-2:#E5E9F4; --brand-ink:#26346B;
+    --pass:#146B45; --pass-bg:#DFF0E7;
+    --fail:#9B2C22; --fail-bg:#FAE3E0;
+    --warn:#8A5A0B; --warn-bg:#F8EEDA;
+    --on-accent:#FFFFFF;
+    --r:9px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#0E1014; --card:#171A20; --sunk:#1D2128;
+      --ink:#E9EBEF; --ink-2:#A2AAB8; --ink-3:#727A89;
+      --line:#272C35; --line-2:#1F242B;
+      --brand:#8FA6E8; --brand-2:#1A2137; --brand-ink:#A9BBF0;
+      --pass:#5FC192; --pass-bg:#122A1F;
+      --fail:#E8938A; --fail-bg:#2C1917;
+      --warn:#DFAC5A; --warn-bg:#2A2114;
+      --on-accent:#0E1014;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#0E1014; --card:#171A20; --sunk:#1D2128;
+    --ink:#E9EBEF; --ink-2:#A2AAB8; --ink-3:#727A89;
+    --line:#272C35; --line-2:#1F242B;
+    --brand:#8FA6E8; --brand-2:#1A2137; --brand-ink:#A9BBF0;
+    --pass:#5FC192; --pass-bg:#122A1F;
+    --fail:#E8938A; --fail-bg:#2C1917;
+    --warn:#DFAC5A; --warn-bg:#2A2114;
+    --on-accent:#0E1014;
+  }
+
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:860px; margin-inline:auto; padding-inline:18px; }
+
+  /* ---------------------------------------------------------- masthead */
+  header.top { padding-block:34px 18px; }
+  .eyebrow {
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0 0 9px;
+  }
+  h1 {
+    font-family:Spectral,Georgia,serif; font-weight:700;
+    font-size:clamp(1.9rem,6vw,2.5rem); line-height:1.05; letter-spacing:-.02em;
+    margin:0 0 12px; text-wrap:balance;
+  }
+  .lede { color:var(--ink-2); margin:0; max-width:62ch; font-size:15.5px; }
+
+  /* The two things the tester actually needs before anything else: where the
+   * build is. Kept as a list, not cards — it is two lines of reference, and
+   * boxing it would give it more weight than the checklist underneath. */
+  .links { list-style:none; margin:18px 0 0; padding:14px 0 0; border-top:1px solid var(--line-2);
+           display:flex; flex-direction:column; gap:10px; max-width:62ch; }
+  .links li { font-size:14.5px; }
+  .links b { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px; letter-spacing:.09em;
+             text-transform:uppercase; color:var(--ink-3); margin-right:8px; }
+  .links a { color:var(--brand); font-weight:600; }
+  .links span { display:block; color:var(--ink-3); font-size:13px; margin-top:2px; }
+
+  /* ------------------------------------------------------------- meter */
+  .meter { position:sticky; top:0; z-index:30; background:var(--paper);
+           padding-block:11px 10px; border-bottom:1px solid var(--line); }
+  .meter-row { display:flex; align-items:center; gap:13px; flex-wrap:wrap; }
+  .bar { flex:1 1 190px; height:8px; border-radius:99px; background:var(--sunk);
+         overflow:hidden; display:flex; min-width:150px; }
+  .bar i { display:block; height:100%; }
+  .bar .p { background:var(--pass); }
+  .bar .f { background:var(--fail); }
+  .tally { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px;
+           color:var(--ink-2); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .tally b { color:var(--ink); font-weight:600; }
+
+  .filters { display:flex; gap:7px; flex-wrap:wrap; margin-top:10px; }
+  .chip {
+    font:inherit; font-size:12.5px; padding:5px 11px; border-radius:99px;
+    border:1px solid var(--line); background:var(--card); color:var(--ink-2);
+    cursor:pointer; min-height:28px;
+  }
+  .chip[aria-pressed="true"] { background:var(--brand); border-color:var(--brand);
+                               color:var(--on-accent); font-weight:500; }
+
+  /* ---------------------------------------------------------- sections */
+  main { padding-bottom:64px; }
+  section { margin-top:34px; }
+  .sec-head { display:flex; align-items:baseline; gap:11px; flex-wrap:wrap;
+              padding-bottom:7px; border-bottom:2px solid var(--ink); margin-bottom:3px; }
+  .sec-head h2 { font-family:Spectral,Georgia,serif; font-weight:600;
+                 font-size:1.3rem; margin:0; flex:1 1 auto; letter-spacing:-.01em; }
+  .sec-count { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px;
+               color:var(--ink-3); font-variant-numeric:tabular-nums; }
+  .sec-note { color:var(--ink-2); font-size:14px; margin:9px 0 2px; max-width:64ch; }
+  .group { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+           letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3);
+           margin:18px 0 5px; font-weight:500; }
+
+  /* ------------------------------------------------------------- items */
+  .item { display:grid; grid-template-columns:auto minmax(0,1fr); gap:11px;
+          padding:11px 0; border-top:1px solid var(--line-2); align-items:start; }
+  .item:first-of-type { border-top:1px solid var(--line); }
+  .tick {
+    width:26px; height:26px; flex:none; border-radius:7px; cursor:pointer;
+    border:1.5px solid var(--line); background:var(--card); color:var(--ink-3);
+    display:grid; place-items:center; font-size:14px; font-weight:600; padding:0;
+    font-family:inherit; line-height:1;
+  }
+  .tick[data-s="pass"] { background:var(--pass-bg); border-color:var(--pass); color:var(--pass); }
+  .tick[data-s="fail"] { background:var(--fail-bg); border-color:var(--fail); color:var(--fail); }
+  .what { min-width:0; }
+  .what p { margin:0; font-size:14.5px; }
+  .what .why { color:var(--ink-2); font-size:13px; margin-top:3px; }
+  .item[data-s="pass"] .what p { color:var(--ink-3); text-decoration:line-through;
+                                 text-decoration-color:var(--line); }
+  .note {
+    margin-top:8px; width:100%; font:inherit; font-size:13.5px; padding:7px 9px;
+    border:1px solid var(--fail); border-radius:7px; background:var(--card);
+    color:var(--ink); resize:vertical; min-height:56px;
+  }
+  .note::placeholder { color:var(--ink-3); }
+
+  .pill { display:inline-block; font-family:"IBM Plex Mono",ui-monospace,monospace;
+          font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+          padding:1px 6px; border-radius:4px; margin-right:6px; vertical-align:1px;
+          background:var(--warn-bg); color:var(--warn); font-weight:500; }
+
+  /* --------------------------------------------------------- key/cards */
+  .card { background:var(--card); border:1px solid var(--line); border-radius:var(--r);
+          padding:15px 17px; margin-top:16px; }
+  .card h3 { margin:0 0 7px; font-size:14px; font-weight:600; }
+  .card p { margin:0 0 9px; color:var(--ink-2); font-size:14px; }
+  .card p:last-child { margin-bottom:0; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; }
+  th { text-align:left; font-weight:500; color:var(--ink-3); padding:5px 9px 5px 0;
+       font-size:11.5px; letter-spacing:.07em; text-transform:uppercase;
+       font-family:"IBM Plex Mono",ui-monospace,monospace; border-bottom:1px solid var(--line); }
+  td { padding:6px 9px 6px 0; border-bottom:1px solid var(--line-2); vertical-align:top; }
+  td.mono, .mono { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; }
+  .tbl-wrap { overflow-x:auto; }
+
+  .actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:20px; align-items:center; }
+  .btn { font:inherit; font-size:13.5px; padding:8px 14px; border-radius:8px;
+         border:1px solid var(--brand); background:var(--brand); color:var(--on-accent);
+         cursor:pointer; font-weight:500; min-height:34px; }
+  .btn.ghost { background:var(--card); color:var(--brand-ink); }
+  .said { font-size:13px; color:var(--ink-3); }
+
+  .who { display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-top:13px; }
+  .who label { font-size:13px; color:var(--ink-2); }
+  .who input { font:inherit; font-size:13.5px; padding:6px 10px; border-radius:7px;
+               border:1px solid var(--line); background:var(--card); color:var(--ink);
+               min-width:160px; }
+
+  footer { margin-top:44px; padding-block:18px 50px; border-top:1px solid var(--line);
+           color:var(--ink-3); font-size:12.5px; }
+
+  a { color:var(--brand-ink); text-underline-offset:2px; }
+  :focus-visible { outline:2px solid var(--brand); outline-offset:2px; border-radius:4px; }
+  @media (prefers-reduced-motion:reduce) { * { transition:none!important; animation:none!important; } }
+</style>
+
+<div class="wrap" id="root"></div>
+
+<script type="application/json" id="app-state">{"items":{},"tester":""}</script>
+
+<script id="app-js">
+/* ------------------------------------------------------------------ data
+ * The checklist itself. Derived from the app's own navigation (nav.js) and
+ * the tab rows inside each page, so it matches what a tester actually sees
+ * rather than what anyone remembers building.
+ *
+ * `why` exists on an item only where the check is not self-evident — mostly
+ * where a defect was found and fixed, because those are the places most
+ * likely to break again and the ones a tester would otherwise walk past.
+ */
+const PLAN = [
+  { id:"start", title:"Before you start", note:"Five minutes of setup. Do these in order — the rest assumes they passed.",
+    items:[
+      { id:"st1", t:"Open the web link on a laptop. The college picker lists Sri Venkateswara, Gayatri and Maruthi." },
+      { id:"st2", t:"Open the same link on your phone. Everything fits — no sideways scrolling on any screen." },
+      { id:"st3", t:"Install the APK on an Android phone and open it.", why:"Allow “install from unknown sources” when prompted." },
+      { id:"st4", t:"In the app, the phone's status bar (battery, time, signal) does not sit on top of the app's own header.", why:"This was a reported complaint and was fixed — worth confirming on a real device." },
+      { id:"st5", t:"Pick Sri Venkateswara, then Student. The sign-in screen prefills a demo roll number and password." },
+      { id:"st6", t:"Sign in. You land on a dashboard with a name, a percentage and a CGPA — not an empty shell." },
+    ]},
+
+  { id:"signin", title:"Signing in, as everyone", note:"Five roles. Sign in as each, confirm the portal you get is the right one, then sign out again.",
+    items:[
+      { id:"si1", t:"Student — 22CSE1047 / student — lands on the student dashboard." },
+      { id:"si2", t:"Faculty — FAC-1120 / faculty — lands on the faculty dashboard." },
+      { id:"si3", t:"College Admin — ADM-004 / admin — lands on the admin dashboard." },
+      { id:"si4", t:"Parent — PAR-1047 / parent — lands on the parent dashboard, naming a ward." },
+      { id:"si5", t:"Company — use “Recruiting from a company?” on the first screen — CO-ZENITH / company.", why:"This entry point was broken in the demo build and was fixed. It must work without picking a college first." },
+      { id:"si6", t:"A wrong password is refused with a readable message, not a blank screen or a code." },
+      { id:"si7", t:"A roll number that does not exist gives the same message as a wrong password.", why:"Deliberate: a different message would tell a stranger which roll numbers are real." },
+      { id:"si8", t:"Sign out. You are returned to the sign-in screen and the back button does not get you back in." },
+      { id:"si9", t:"The “Forgot it?” link opens a reset flow and explains what happens next." },
+    ]},
+
+  { id:"student", title:"Student portal", note:"22 screens. Open every one. For each: it loads, it shows real figures, and nothing reads “undefined”, “NaN”, “null” or a bare “%”.",
+    groups:[
+      { g:"Overview", items:[
+        { id:"sd1", t:"Dashboard — attendance, CGPA and assignments-due tiles all carry numbers." },
+        { id:"sd2", t:"The attendance figure on the dashboard matches the one on the Attendance screen.", why:"Two screens, one fact. They disagreed before." },
+        { id:"sd3", t:"Student profile — name, roll, branch, section, mentor, contact details." },
+        { id:"sd4", t:"Notifications — the list opens and an item can be read." },
+        { id:"sd5", t:"Announcements — college notices are listed, newest first." },
+      ]},
+      { g:"Academic life", items:[
+        { id:"sa1", t:"Attendance → Overall — the percentage, and a band (safe / warning / critical) that matches it." },
+        { id:"sa2", t:"Attendance → Subject-wise — one dial per subject, each with real numbers.", why:"Add up the per-subject held/attended: they should total the overall figure." },
+        { id:"sa3", t:"Attendance → Subject-wise — the 75% threshold is marked and the colours make sense." },
+        { id:"sa4", t:"Attendance → Monthly — a month-by-month breakdown." },
+        { id:"sa5", t:"Attendance → Low attendance — lists only subjects genuinely below the line." },
+        { id:"sa6", t:"“Class average” is a different number from your own percentage.", why:"It used to be your own figure relabelled, so it always said you were 0.0 points from average." },
+        { id:"sa7", t:"The shortfall calculator does not contradict itself.", why:"It once read “miss up to 33 of the 0 classes left”. Classes-left and can-miss must agree." },
+        { id:"sa8", t:"Leave management — file a leave request. It appears immediately under “In progress”.", why:"A filed request used to vanish — invisible to the student and to the approver." },
+        { id:"sa9", t:"Leave — a type needing a document will not submit without one, and says so." },
+        { id:"sa10", t:"Leave — a type not needing a document submits without one." },
+        { id:"sa11", t:"Academics → Subjects, Timetable, Notes, Assignments, Exams, Results — all six tabs open." },
+        { id:"sa12", t:"Academics → Results — a marksheet shows grades and credits with no permanently blank columns." },
+        { id:"sa13", t:"Examinations → Hall ticket, Backlogs, My queries — all three tabs open." },
+        { id:"sa14", t:"Projects — the list opens and a project can be added." },
+      ]},
+      { g:"Money", items:[
+        { id:"sf1", t:"Fees → Dues — the outstanding total matches the sum of the unpaid rows below it.", why:"The headline and the table disagreed: a paid student was shown ₹85,998 owing." },
+        { id:"sf2", t:"A fee already marked paid shows as cleared and has NO “Pay” button.", why:"This is the big one. A paid tuition fee was offered for payment again." },
+        { id:"sf3", t:"Fees → Paid and → History both open and list sensible amounts and dates." },
+        { id:"sf4", t:"Start a payment on an unpaid due. A confirmation appears naming the right amount." },
+        { id:"sf5", t:"Complete the payment. The due moves to paid and a receipt number appears." },
+        { id:"sf6", t:"After paying, the outstanding total drops by exactly that amount." },
+        { id:"sf7", t:"Scholarships — the list opens with statuses that are not all blank or ₹0." },
+      ]},
+      { g:"Campus", items:[
+        { id:"sc1", t:"Library — your loans, due dates and any fines." },
+        { id:"sc2", t:"Hostel & transport — room or route, or a clear empty state if you have neither." },
+        { id:"sc3", t:"Certificates — request one; it appears in the list with a status." },
+      ]},
+      { g:"Skill building", items:[
+        { id:"sk1", t:"Courses — the catalogue opens." },
+        { id:"sk2", t:"Assessments — an assessment opens and can be started." },
+        { id:"sk3", t:"Practice hub — questions load and an answer can be submitted." },
+        { id:"sk4", t:"Hackathon hub — teams and events are listed." },
+      ]},
+      { g:"Placement", items:[
+        { id:"sp1", t:"Resume — your profile, projects and skills are shown and editable." },
+        { id:"sp2", t:"Job application → Openings and → My applications both open." },
+        { id:"sp3", t:"Apply to an opening. It moves into “My applications”." },
+      ]},
+      { g:"Your college", items:[
+        { id:"sy1", t:"Faculty feedback — a form opens and can be submitted." },
+        { id:"sy2", t:"Your data — explains what is held about you and offers export or deletion." },
+      ]},
+    ]},
+
+  { id:"faculty", title:"Faculty portal", note:"11 screens. Sign in as FAC-1120, who is a Head of Department — so the HoD-only screens appear too.",
+    groups:[
+      { g:"Overview and teaching", items:[
+        { id:"ft1", t:"Dashboard — today's classes, what needs marking, what needs evaluating." },
+        { id:"ft2", t:"“Your attendance” does not claim a confident 0%.", why:"Biometric is not connected, so it must say so rather than imply the lecturer attended nothing." },
+        { id:"ft3", t:"Notifications and Profile both open." },
+        { id:"ft4", t:"Class management → Timetable and → Notes & materials both open." },
+        { id:"ft5", t:"Attendance → Mark — pick a class; the full student list appears." },
+        { id:"ft6", t:"Mark two or three students absent and save. A confirmation names the counts." },
+        { id:"ft7", t:"Re-open the same class — the marks you saved are still there." },
+        { id:"ft8", t:"Sign in as that student and check their attendance has moved.", why:"This is the one flow that crosses every layer: faculty → database → student." },
+        { id:"ft9", t:"Attendance → History, → My attendance, → Section summary all open." },
+        { id:"ft10", t:"Assessments → Assignments and → Question banks both open." },
+        { id:"ft11", t:"Create an assignment and publish it. It appears on the student's Academics screen." },
+        { id:"ft12", t:"Results → Pending, → Submitted, → All — enter marks for a sheet and save a draft." },
+        { id:"ft13", t:"Submit the marks sheet. The counters move from pending to submitted." },
+        { id:"ft14", t:"A mark above the maximum is refused with a readable message." },
+      ]},
+      { g:"Pastoral (HoD)", items:[
+        { id:"fm1", t:"My mentees — every row shows a real attendance percentage or a dash.", why:"Every mentee once read “Attendance null%” and all of them were flagged as needing a word." },
+        { id:"fm2", t:"The group average is a real number, and says how many students it covers." },
+        { id:"fm3", t:"A student with unknown attendance is NOT flagged as a concern." },
+        { id:"fm4", t:"Leaves → Student leave — pending requests are listed.", why:"This once read “the queue is clear” while requests were waiting." },
+        { id:"fm5", t:"Accept a request. It moves to Decided and shows as ACCEPTED, not rejected.", why:"Accepting used to reject. Check the wording after, not just that the click worked." },
+        { id:"fm6", t:"Sign in as that student — their leave shows as approved there too." },
+        { id:"fm7", t:"Reject a different request. It shows as rejected." },
+        { id:"fm8", t:"Leaves → My leave — file your own leave as a staff member." },
+      ]},
+      { g:"Administration", items:[
+        { id:"fa1", t:"Announcements — post one; it reaches students." },
+        { id:"fa2", t:"Reports & analytics — the department table has rows, not just a header.", why:"It was permanently empty for every HoD." },
+      ]},
+    ]},
+
+  { id:"admin", title:"College Admin portal", note:"19 screens, the biggest surface. Sign in as ADM-004.",
+    groups:[
+      { g:"Overview and people", items:[
+        { id:"ad1", t:"Dashboard — the “Waiting on you” queue lists real counts." },
+        { id:"ad2", t:"Department strength — each department shows BOTH a student count and a faculty count.", why:"Faculty read 0 for every department against a real headcount." },
+        { id:"ad3", t:"Students → Pursuing, Passed out, Dropout, All — all four tabs open." },
+        { id:"ad4", t:"Search a student by name and by roll number. Both find them." },
+        { id:"ad5", t:"Open a student. Their attendance, fees and parents are shown." },
+        { id:"ad6", t:"Add one student by hand. They appear in the roster." },
+        { id:"ad7", t:"Add the same roll number again in lower case — it is refused as a duplicate.", why:"It used to create a second, shadow student." },
+        { id:"ad8", t:"Import students from a CSV. The preview maps the columns and shows a sample." },
+        { id:"ad9", t:"Confirm the import. The students are actually created and the count is right.", why:"Import used to preview beautifully and then import nothing, silently." },
+        { id:"ad10", t:"Import a file with a bad row among good ones. The good rows go in; the bad one is named with a reason and a row number." },
+        { id:"ad11", t:"Arrange sections — preview an alphabetical split. It names who moves and who stays." },
+        { id:"ad12", t:"Apply the arrangement. It completes, shows a result, and the roster behind it updates.", why:"The button used to stick on “Arranging” forever." },
+        { id:"ad13", t:"Faculty → Roster, Subject allocation, Leaves, Feedback — all four tabs open." },
+        { id:"ad14", t:"Accounts & access → Students — activation state and last sign-in are real, not “Never”.", why:"Every student read “Not issued / Never”, including ones who had just signed in." },
+        { id:"ad15", t:"Accounts → Faculty, Sessions, Activation sheet, Policy — all open." },
+        { id:"ad16", t:"Issue a credential to someone who has none. A receipt appears." },
+      ]},
+      { g:"Academic", items:[
+        { id:"ac1", t:"Academics → Structure, Subjects, Class strength, Timetable, Calendar, Term rollover — all six open." },
+        { id:"ac2", t:"Timetable — edit a section's timetable and save it." },
+        { id:"ac3", t:"The clash count is believable and does not double-count.", why:"It reported 216 clashes where there were 108." },
+        { id:"ac4", t:"Examinations → Sessions, Hall tickets, Invigilation, Results release, Backlogs, Condonation, Grading scale — all seven open." },
+        { id:"ac5", t:"Results release opens without the screen breaking.", why:"It crashed on exactly the one batch that was ready to release." },
+        { id:"ac6", t:"A batch that is not ready lists what is blocking it." },
+        { id:"ac7", t:"Release a ready batch. It reports how many students were notified." },
+        { id:"ac8", t:"Certificates & no-dues → Open, Blocked, Issued, All — all four filters work." },
+        { id:"ac9", t:"Issue a certificate a student requested. It moves to Issued." },
+      ]},
+      { g:"Campus and money", items:[
+        { id:"am1", t:"Library → On loan, Overdue, Catalogue — all three tabs open." },
+        { id:"am2", t:"Issue a book to a student and then return it." },
+        { id:"am3", t:"Hostel & transport → Hostel and → Transport — occupancy figures are not all zero.", why:"Every block read 0 occupants against 136 listed residents." },
+        { id:"am4", t:"Payments → Fee structure, Fee approvals, Fines, Salary invoices, Quotations — all five open." },
+        { id:"am5", t:"Raise a fee demand for a year group. It reports how many students it was raised for." },
+        { id:"am6", t:"Record an offline payment against a student's due. The due clears." },
+        { id:"am7", t:"Scholarships — the headline figures agree with the table under them.", why:"KPIs read ₹0 beside a ₹35,000 row." },
+      ]},
+      { g:"Placement and oversight", items:[
+        { id:"ao1", t:"Placements → Drives, Company logins, Companies, Reports — all four tabs open." },
+        { id:"ao2", t:"Grievances → Open, In review, Resolved, All — and a grievance's description is readable.", why:"Every description rendered as empty quotes." },
+        { id:"ao3", t:"Discipline — record an action against a student; it appears on their record." },
+        { id:"ao4", t:"Reports → KPIs, Students, Faculty, Placements, College, Accreditation, Activity log — all seven open." },
+        { id:"ao5", t:"Reports — the attendance report returns within a few seconds.", why:"It used to never return at all." },
+        { id:"ao6", t:"Export a report as CSV. The file downloads and opens in a spreadsheet." },
+        { id:"ao7", t:"Send circulars → Students, Faculty, Everyone — send one and it reports who it reached.", why:"Every circular read “Delivered to 0 people”, and one addressed to Faculty went to students." },
+        { id:"ao8", t:"Messages — the outbox lists what was sent." },
+        { id:"ao9", t:"No message in the outbox shows a readable one-time code.", why:"Sign-in codes were readable here, which let any admin take over any account." },
+        { id:"ao10", t:"Settings → Rules, Access, College, Change history — all four tabs open." },
+      ]},
+    ]},
+
+  { id:"parent", title:"Parent portal", note:"6 screens. Sign in as PAR-1047.",
+    items:[
+      { id:"pa1", t:"Dashboard — your ward is named, with their attendance and fee position." },
+      { id:"pa2", t:"The dashboard does not contradict itself.", why:"One card said fees block the hall ticket while the line under it said the hall ticket was issued." },
+      { id:"pa3", t:"“Last SGPA” is the most recent semester, not the first one.", why:"It showed semester 1 and called it the latest." },
+      { id:"pa4", t:"Notifications open." },
+      { id:"pa5", t:"Attendance — the same figure the student sees on their own screen." },
+      { id:"pa6", t:"Results — every semester shows actual subject rows, not an empty table.", why:"Six semesters rendered headers with no rows." },
+      { id:"pa7", t:"Fees — the headline and the table agree, and payment methods read as words not codes." },
+      { id:"pa8", t:"Announcements open." },
+      { id:"pa9", t:"You can see only your own ward — no other student appears anywhere." },
+    ]},
+
+  { id:"company", title:"Company portal", note:"9 screens. Sign in with the “Recruiting from a company?” link as CO-ZENITH.",
+    items:[
+      { id:"co1", t:"Dashboard opens." },
+      { id:"co2", t:"Jobs & internships → Open, Closed, All — all three tabs open." },
+      { id:"co3", t:"Post a job. It appears in the list." },
+      { id:"co4", t:"Applications — applicants are listed and can be moved through stages." },
+      { id:"co5", t:"Candidate search — a search returns results, or explains clearly why it cannot." },
+      { id:"co6", t:"Interviews & offers — schedule an interview and record an outcome." },
+      { id:"co7", t:"Make an offer to a candidate." },
+      { id:"co8", t:"AI assistant and Analytics — these are premium screens. If your plan lacks them, the message is a customer-facing one.", why:"It used to end with a note written for developers." },
+      { id:"co9", t:"Company profile — details load and can be edited." },
+      { id:"co10", t:"No sentence trails off or ends with a stray full stop where a college name should be." },
+    ]},
+
+  { id:"cross", title:"Across the whole app", note:"Do these last, on any role. They catch the things a screen-by-screen pass walks straight past.",
+    groups:[
+      { g:"Numbers and money", items:[
+        { id:"cx1", t:"No screen anywhere shows “NaN”, “undefined”, “null”, “Invalid Date”, “₹NaN” or a bare “%”." },
+        { id:"cx2", t:"No percentage is above 100 or below 0." },
+        { id:"cx3", t:"No date shows as 1970, or as a long string like “Thu Sep 17 2026 00:00:00 GMT+0000”." },
+        { id:"cx4", t:"Amounts are formatted as rupees with separators — ₹75,000 not 7500000." },
+        { id:"cx5", t:"Where a figure genuinely is not known, it shows a dash — not a zero." },
+      ]},
+      { g:"Dark mode", items:[
+        { id:"cd1", t:"Set your PHONE to dark mode, then open the app without touching its own theme setting.", why:"This exact state shipped broken twice — the default many people never change." },
+        { id:"cd2", t:"The “Sign in” button's text is clearly readable against the button." },
+        { id:"cd3", t:"Every screen is readable in dark mode — no grey-on-grey, no invisible text." },
+        { id:"cd4", t:"Input boxes and their placeholder text are readable." },
+        { id:"cd5", t:"Switch the app's own theme to Light and Dark. Both look right and the choice sticks." },
+        { id:"cd6", t:"If your phone has an “increase contrast” setting, turn it on and check dark mode again.", why:"Turning that on used to make the app harder to read, not easier." },
+      ]},
+      { g:"Phone and tablet", items:[
+        { id:"cp1", t:"Every screen fits at phone width — nothing scrolls sideways except wide tables." },
+        { id:"cp2", t:"A wide table scrolls sideways on its own without moving the whole page." },
+        { id:"cp3", t:"Buttons are big enough to hit with a thumb." },
+        { id:"cp4", t:"The bottom tab bar never covers a button you need to press." },
+        { id:"cp5", t:"Rotate to landscape — the layout survives." },
+      ]},
+      { g:"Keyboard and access", items:[
+        { id:"ck1", t:"On a laptop, press Tab repeatedly. Every control you land on is visibly outlined." },
+        { id:"ck2", t:"You can reach and use the whole sign-in form with the keyboard alone." },
+        { id:"ck3", t:"Open any dialog, then press Escape. It closes." },
+        { id:"ck4", t:"Inside a dialog, Tab stays inside it rather than wandering into the page behind." },
+      ]},
+      { g:"When things go wrong", items:[
+        { id:"cw1", t:"Turn airplane mode on and use the app. It says something useful rather than freezing." },
+        { id:"cw2", t:"Turn the network back on. The app recovers without needing a restart." },
+        { id:"cw3", t:"Submit a form with a required field empty. It says which field, in plain words." },
+        { id:"cw4", t:"Press a save button twice quickly. Nothing is saved twice." },
+        { id:"cw5", t:"Use the browser's back button on several screens. Nothing breaks." },
+        { id:"cw6", t:"Reload the page mid-task. You are still signed in." },
+        { id:"cw7", t:"No screen ever shows a raw error, a stack trace, or a reference like “E-2SY2CC” with nothing else." },
+      ]},
+      { g:"Wording", items:[
+        { id:"cq1", t:"Any sentence that names a duration is correct.", why:"The sign-in screen said a code lasts 15 minutes, the activation screen said an hour, and the message said ten." },
+        { id:"cq2", t:"No screen shows a note meant for developers." },
+        { id:"cq3", t:"Spelling and grammar read like a product, not a draft." },
+      ]},
+    ]},
+];
+
+/* ------------------------------------------------------------- plumbing */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
+  ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+
+function readState() {
+  try { return JSON.parse($("#app-state").textContent) || { items:{}, tester:"" }; }
+  catch { return { items:{}, tester:"" }; }
+}
+let state = readState();
+
+/* A viewer who cannot publish still gets their own ticks kept locally, so a
+ * read-only share is useful rather than merely visible. */
+try {
+  const local = JSON.parse(localStorage.getItem("campus-testplan") || "null");
+  if (local && Object.keys(local.items || {}).length > Object.keys(state.items || {}).length) state = local;
+} catch { /* private window, blocked storage — the page works without it */ }
+
+let filter = "all";
+let canPublish = null;   // null = not yet known
+let saveTimer = null;
+let lastSaid = "";
+
+const allItems = () =>
+  PLAN.flatMap((s) => s.items ? s.items : s.groups.flatMap((g) => g.items));
+
+const statusOf = (id) => state.items[id]?.s || "";
+const noteOf = (id) => state.items[id]?.n || "";
+
+function counts() {
+  const all = allItems();
+  let pass = 0, fail = 0;
+  for (const it of all) {
+    const s = statusOf(it.id);
+    if (s === "pass") pass++;
+    else if (s === "fail") fail++;
+  }
+  return { total: all.length, pass, fail, left: all.length - pass - fail };
+}
+
+function visible(it) {
+  if (filter === "todo") return !statusOf(it.id);
+  if (filter === "fail") return statusOf(it.id) === "fail";
+  return true;
+}
+
+/* --------------------------------------------------------------- render */
+function itemHTML(it) {
+  const s = statusOf(it.id);
+  const mark = s === "pass" ? "✓" : s === "fail" ? "✕" : "";
+  const label = s === "pass" ? "Passed" : s === "fail" ? "Failed" : "Not tested";
+  return `
+    <div class="item" data-s="${s}" data-id="${esc(it.id)}">
+      <button class="tick" data-s="${s}" data-act="cycle" data-id="${esc(it.id)}"
+              aria-label="${esc(label)} — ${esc(it.t)}">${mark}</button>
+      <div class="what">
+        <p>${it.pill ? `<span class="pill">${esc(it.pill)}</span>` : ""}${esc(it.t)}</p>
+        ${it.why ? `<div class="why">${esc(it.why)}</div>` : ""}
+        ${s === "fail" ? `<textarea class="note" data-id="${esc(it.id)}"
+           placeholder="What happened? Which screen, what you did, what you saw.">${esc(noteOf(it.id))}</textarea>` : ""}
+      </div>
+    </div>`;
+}
+
+function sectionHTML(sec) {
+  const items = sec.items ? sec.items : sec.groups.flatMap((g) => g.items);
+  const done = items.filter((i) => statusOf(i.id)).length;
+  let body = "";
+  if (sec.items) {
+    const vis = sec.items.filter(visible);
+    body = vis.length ? vis.map(itemHTML).join("") : `<p class="sec-note">Nothing here matches the filter.</p>`;
+  } else {
+    body = sec.groups.map((g) => {
+      const vis = g.items.filter(visible);
+      if (!vis.length) return "";
+      return `<div class="group">${esc(g.g)}</div>` + vis.map(itemHTML).join("");
+    }).join("");
+    if (!body) body = `<p class="sec-note">Nothing here matches the filter.</p>`;
+  }
+  return `
+    <section>
+      <div class="sec-head">
+        <h2>${esc(sec.title)}</h2>
+        <span class="sec-count">${done} / ${items.length}</span>
+      </div>
+      ${sec.note ? `<p class="sec-note">${esc(sec.note)}</p>` : ""}
+      ${body}
+    </section>`;
+}
+
+function render() {
+  const c = counts();
+  const pp = c.total ? (c.pass / c.total) * 100 : 0;
+  const fp = c.total ? (c.fail / c.total) * 100 : 0;
+
+  $("#root").innerHTML = `
+    <header class="top">
+      <p class="eyebrow">Campus &middot; version 1.4.2 &middot; sample-data build</p>
+      <h1>Campus Test Pass</h1>
+      <p class="lede">
+        Every screen in the app, and what to check on each. Tap a box once for pass, twice for fail —
+        a failed check opens a box to say what went wrong. Your answers are kept as you go — when
+        you are done, <b>Copy the failures</b> at the bottom and send that back.
+      </p>
+      <div class="who">
+        <label for="tester">Tester</label>
+        <input id="tester" type="text" value="${esc(state.tester || "")}" placeholder="Your name">
+      </div>
+
+      <ul class="links">
+        <li><b>Web</b> <a href="https://kundanellanki.github.io/campus-demo/" target="_blank" rel="noopener">kundanellanki.github.io/campus-demo</a>
+          <span>Works on a laptop or a phone browser. No account needed. Sign in with the demo accounts below.</span></li>
+        <li><b>Android</b> campus-1.4.2.apk
+          <span>Sent to you as a file alongside this checklist. Allow “install from unknown sources” when the phone asks.</span></li>
+      </ul>
+    </header>
+
+    <div class="meter">
+      <div class="meter-row">
+        <div class="bar" role="img" aria-label="${c.pass} passed, ${c.fail} failed, ${c.left} not tested">
+          <i class="p" style="width:${pp}%"></i><i class="f" style="width:${fp}%"></i>
+        </div>
+        <div class="tally"><b>${c.pass}</b> pass · <b>${c.fail}</b> fail · <b>${c.left}</b> left</div>
+      </div>
+      <div class="filters">
+        <button class="chip" data-act="filter" data-v="all"  aria-pressed="${filter === "all"}">Everything</button>
+        <button class="chip" data-act="filter" data-v="todo" aria-pressed="${filter === "todo"}">Not tested</button>
+        <button class="chip" data-act="filter" data-v="fail" aria-pressed="${filter === "fail"}">Failed</button>
+      </div>
+    </div>
+
+    <main>
+      ${PLAN.map(sectionHTML).join("")}
+
+      <section>
+        <div class="sec-head"><h2>What this build cannot show you</h2></div>
+        <p class="sec-note">
+          Not faults — things switched off on purpose in a test build. Please do not report these.
+        </p>
+        <div class="card">
+          <p><b>No real SMS or email.</b> Codes and notices are composed and queued, and go nowhere.
+             The screens say so where it matters.</p>
+          <p><b>No real money.</b> Payments run on a test driver. Nothing is charged and no bank is involved.</p>
+          <p><b>No push notifications.</b> The in-app bell works; nothing arrives on a locked phone.</p>
+          <p><b>The data is sample data.</b> Names, marks and fees are invented. Anything you change is
+             yours alone and resets when the page is reloaded fresh.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><h2>Reporting something</h2></div>
+        <p class="sec-note">
+          Mark the check as failed and write in the box: which role you were signed in as, which screen,
+          what you did, what you expected, and what happened instead. A screenshot helps more than a
+          description — take one at the moment it happens.
+        </p>
+        <div class="actions">
+          <button class="btn" data-act="copy">Copy the failures</button>
+          <button class="btn ghost" data-act="reset">Start over</button>
+          <span class="said" id="said"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Campus 1.4.2 &middot; ${c.total} checks across 67 screens and five roles.
+      Built from the app's own navigation, so if a screen exists it is on this list.
+    </footer>`;
+
+  $("#said").textContent = lastSaid;
+}
+
+/* ---------------------------------------------------------------- save */
+function buildDoc() {
+  /* Rebuilt from the static shell plus the state — never from the live DOM,
+   * which would bake one viewer's scroll position and open boxes into the
+   * document everybody else then loads. */
+  const css = $("#app-css").textContent;
+  const js = $("#app-js").textContent;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Campus Test Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style id="app-css">${css}</style></head><body>
+<div class="wrap" id="root"></div>
+<script type="application/json" id="app-state">${JSON.stringify(state).replace(/</g, "\\u003c")}<\/script>
+<script id="app-js">${js}<\/script></body></html>`;
+}
+
+function saveLocal() {
+  try { localStorage.setItem("campus-testplan", JSON.stringify(state)); } catch { /* fine */ }
+}
+
+async function save() {
+  saveLocal();
+  clearTimeout(saveTimer);
+  /* Batched: ticking six boxes in a row is one published version, not six. */
+  saveTimer = setTimeout(async () => {
+    const api = await (window.claude?.use?.("artifact") ?? Promise.resolve(null));
+    if (!api) { canPublish = false; say("Saved on this device."); return; }
+    try {
+      await api.publish(buildDoc());
+      canPublish = true;
+      say("Saved and shared.");
+    } catch (err) {
+      canPublish = false;
+      say(err?.code === "conflict" ? "Someone else saved first — reload for their version."
+                                  : "Saved on this device only.");
+    }
+  }, 900);
+}
+
+function say(msg) { lastSaid = msg; const el = $("#said"); if (el) el.textContent = msg; }
+
+/* -------------------------------------------------------------- events */
+const NEXT = { "": "pass", pass: "fail", fail: "" };
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-act]");
+  if (!btn) return;
+  const act = btn.dataset.act;
+
+  if (act === "cycle") {
+    const id = btn.dataset.id;
+    const next = NEXT[statusOf(id)];
+    if (!next) delete state.items[id];
+    else state.items[id] = { s: next, n: noteOf(id) };
+    render(); save();
+  }
+
+  if (act === "filter") { filter = btn.dataset.v; render(); }
+
+  if (act === "copy") {
+    const lines = [];
+    for (const sec of PLAN) {
+      const items = sec.items ? sec.items : sec.groups.flatMap((g) => g.items);
+      for (const it of items) {
+        if (statusOf(it.id) !== "fail") continue;
+        lines.push(`FAILED — ${sec.title}: ${it.t}`);
+        if (noteOf(it.id)) lines.push(`  ${noteOf(it.id)}`);
+      }
+    }
+    const c = counts();
+    const out = lines.length
+      ? `Campus 1.4.2 test pass${state.tester ? ` — ${state.tester}` : ""}\n`
+        + `${c.pass} passed, ${c.fail} failed, ${c.left} not tested\n\n${lines.join("\n")}`
+      : "Nothing has been marked as failed yet.";
+    navigator.clipboard?.writeText(out)
+      .then(() => say("Copied."))
+      .catch(() => say("Could not copy — select the text by hand."));
+  }
+
+  if (act === "reset") {
+    if (!confirm("Clear every tick and note?")) return;
+    state = { items: {}, tester: state.tester };
+    render(); save();
+  }
+});
+
+document.addEventListener("input", (e) => {
+  if (e.target.id === "tester") { state.tester = e.target.value; saveLocal(); clearTimeout(saveTimer); save(); return; }
+  if (e.target.classList?.contains("note")) {
+    const id = e.target.dataset.id;
+    state.items[id] = { s: "fail", n: e.target.value };
+    saveLocal(); save();          /* no re-render: it would steal the caret */
+  }
+});
+
+render();
+</script>
+
+</html>
