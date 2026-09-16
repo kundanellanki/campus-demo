@@ -1,0 +1,18 @@
+# Campus is a portal, not a content site.
+#
+# There is exactly one crawlable page: the shell at the root, which renders the
+# college picker and the sign-in form. Every other screen is a hash route
+# (#/attendance, #/students, …), and a fragment is never sent to the server —
+# so there is no authed URL here for a crawler to request and none to disallow.
+# What keeps those screens out of an index is that they cannot be reached
+# without a session, not a line in this file.
+#
+# The assets are deliberately left crawlable: this is a client-rendered app, so
+# a crawler that cannot fetch the JavaScript and CSS sees an empty <div>.
+
+User-agent: *
+Allow: /
+
+# No value in indexing the offline worker, and a stale copy in a search result
+# is actively confusing.
+Disallow: /sw.js

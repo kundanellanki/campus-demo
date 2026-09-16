@@ -1,0 +1,8 @@
+{
+  "version": "2026.09.16.1382",
+  "url": "campus-2026.09.16.1382.zip",
+  "sha256": "8c0f5341d282356c553d5a1487ec95e844888743164a7cf7bca8f54b2ecb8eb2",
+  "bytes": 752850,
+  "notes": "Typing in dialogs no longer loses focus after the first character.",
+  "publishedAt": "2026-09-16T08:49:11.383Z"
+}
