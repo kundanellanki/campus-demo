@@ -1,8 +1,8 @@
 {
-  "version": "2026.09.17.5707",
-  "url": "campus-2026.09.17.5707.zip",
-  "sha256": "824cdf9c62562dd76aae2448690a09b8c9b44c5ac52b72c96965e78a0c54b7cd",
-  "bytes": 772842,
-  "notes": "Module tiles now glow softly from behind; part-paid fees, leave history, placements and library renewal fixed.",
-  "publishedAt": "2026-09-17T10:49:15.707Z"
+  "version": "2026.0917.130129",
+  "url": "campus-2026.0917.130129.zip",
+  "sha256": "53c46ae9d33690183033761dc9213b43dfd3e3afde312b4e18a707fc01acde5e",
+  "bytes": 862421,
+  "notes": "The opening animation now plays every time you open the app.",
+  "publishedAt": "2026-09-17T13:01:31.013Z"
 }
