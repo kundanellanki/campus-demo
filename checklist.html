@@ -386,6 +386,12 @@ const PLAN = [
 
   { id:"cross", title:"Across the whole app", note:"Do these last, on any role. They catch the things a screen-by-screen pass walks straight past.",
     groups:[
+      { g:"Typing", items:[
+        { id:"ct1", t:"Open any dialog with a text box — Create assignment, Create a project, Register a student — and type a whole sentence without stopping. Every character lands.", why:"Until 1.4.3 the first character typed threw focus out of the field, so a word took a click per letter. Worth a minute on several dialogs, not just one." },
+        { id:"ct2", t:"In one of those dialogs, type into a long description box and a short single-line field. Both keep the caret where you left it." },
+        { id:"ct3", t:"Close a dialog with Escape. It closes, and the button that opened it is highlighted again." },
+        { id:"ct4", t:"Where a dialog opens with a field already active, start typing straight away — no click needed first." },
+      ]},
       { g:"Numbers and money", items:[
         { id:"cx1", t:"No screen anywhere shows “NaN”, “undefined”, “null”, “Invalid Date”, “₹NaN” or a bare “%”." },
         { id:"cx2", t:"No percentage is above 100 or below 0." },
@@ -528,7 +534,7 @@ function render() {
 
   $("#root").innerHTML = `
     <header class="top">
-      <p class="eyebrow">Campus &middot; version 1.4.2 &middot; sample-data build</p>
+      <p class="eyebrow">Campus &middot; version 1.4.3 &middot; sample-data build</p>
       <h1>Campus Test Pass</h1>
       <p class="lede">
         Every screen in the app, and what to check on each. Tap a box once for pass, twice for fail —
@@ -543,7 +549,7 @@ function render() {
       <ul class="links">
         <li><b>Web</b> <a href="https://kundanellanki.github.io/campus-demo/" target="_blank" rel="noopener">kundanellanki.github.io/campus-demo</a>
           <span>Works on a laptop or a phone browser. No account needed. Sign in with the demo accounts below.</span></li>
-        <li><b>Android</b> campus-1.4.2.apk
+        <li><b>Android</b> campus-1.4.3.apk
           <span>Sent to you as a file alongside this checklist. Allow “install from unknown sources” when the phone asks.</span></li>
       </ul>
     </header>
@@ -596,7 +602,7 @@ function render() {
     </main>
 
     <footer>
-      Campus 1.4.2 &middot; ${c.total} checks across 67 screens and five roles.
+      Campus 1.4.3 &middot; ${c.total} checks across 67 screens and five roles.
       Built from the app's own navigation, so if a screen exists it is on this list.
     </footer>`;
 
@@ -677,7 +683,7 @@ document.addEventListener("click", (e) => {
     }
     const c = counts();
     const out = lines.length
-      ? `Campus 1.4.2 test pass${state.tester ? ` — ${state.tester}` : ""}\n`
+      ? `Campus 1.4.3 test pass${state.tester ? ` — ${state.tester}` : ""}\n`
         + `${c.pass} passed, ${c.fail} failed, ${c.left} not tested\n\n${lines.join("\n")}`
       : "Nothing has been marked as failed yet.";
     navigator.clipboard?.writeText(out)

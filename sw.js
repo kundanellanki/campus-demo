@@ -18,7 +18,7 @@
  *      this worker, so a shared phone in a lab does not keep the last
  *      student's results.
  */
-const BUILD = "202609160849";
+const BUILD = "mu5eqcid";
 const CACHE = `campus-${BUILD}`;
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg"];
 
