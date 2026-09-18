@@ -1,8 +1,8 @@
 {
-  "version": "2026.0917.130129",
-  "url": "campus-2026.0917.130129.zip",
-  "sha256": "53c46ae9d33690183033761dc9213b43dfd3e3afde312b4e18a707fc01acde5e",
-  "bytes": 862421,
-  "notes": "The opening animation now plays every time you open the app.",
-  "publishedAt": "2026-09-17T13:01:31.013Z"
+  "version": "2026.09.18.0006",
+  "url": "campus-2026.09.18.0006.zip",
+  "sha256": "bd046daf62a98ae04ab1ce249252da28cf93deeebc799cce65bcfe63ac3db318",
+  "bytes": 536309,
+  "notes": "New Campus logo, and an opening animation. Typing fixes from 1.4.3 included.",
+  "publishedAt": "2026-09-18T04:34:30.006Z"
 }
