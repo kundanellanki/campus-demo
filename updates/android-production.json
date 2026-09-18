@@ -1,8 +1,8 @@
 {
-  "version": "2026.0918.091402",
-  "url": "campus-2026.0918.091402.zip",
-  "sha256": "73da58b7e883f8ee883b70520daf0fe5248721a1f0d17fde41156f2396b07159",
-  "bytes": 889753,
-  "notes": "Roster paging, report index, contrast and target-size fixes",
-  "publishedAt": "2026-09-18T09:14:05.057Z"
+  "version": "2026.0918.122437",
+  "url": "campus-2026.0918.122437.zip",
+  "sha256": "2c0bb90ac7bcee42e6ebca196bbf719213dc65781a6d61e5a8cae00a449e6b61",
+  "bytes": 889916,
+  "notes": "Fix five admin screens crashing in the demo build",
+  "publishedAt": "2026-09-18T12:24:39.488Z"
 }
