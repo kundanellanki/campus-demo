@@ -1,8 +1,8 @@
 {
-  "version": "2026.0918.122437",
-  "url": "campus-2026.0918.122437.zip",
-  "sha256": "2c0bb90ac7bcee42e6ebca196bbf719213dc65781a6d61e5a8cae00a449e6b61",
-  "bytes": 889916,
-  "notes": "Fix five admin screens crashing in the demo build",
-  "publishedAt": "2026-09-18T12:24:39.488Z"
+  "version": "2026.0919.052930",
+  "url": "campus-2026.0919.052930.zip",
+  "sha256": "ee118eba12d42cd3841487f77e4a04ddee9dac6b0a011075a00e4af4014052f0",
+  "bytes": 890857,
+  "notes": "Phone fields reject letters, Resume download and share work, theme icon shows system mode, sign-in fits a laptop screen",
+  "publishedAt": "2026-09-19T05:29:31.242Z"
 }
