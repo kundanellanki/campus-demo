@@ -1,8 +1,8 @@
 {
-  "version": "2026.0919.052930",
-  "url": "campus-2026.0919.052930.zip",
-  "sha256": "ee118eba12d42cd3841487f77e4a04ddee9dac6b0a011075a00e4af4014052f0",
-  "bytes": 890857,
-  "notes": "Phone fields reject letters, Resume download and share work, theme icon shows system mode, sign-in fits a laptop screen",
-  "publishedAt": "2026-09-19T05:29:31.242Z"
+  "version": "2026.0919.112055",
+  "url": "campus-2026.0919.112055.zip",
+  "sha256": "acbe0dd725a5088c02a7d06c29bf6f0d46223ca3f0989819a26f74130a810252",
+  "bytes": 906052,
+  "notes": "Faculty attendance, college logo, gallery, per-college designations, certificate verification, exam queries, four new importers, working outbox",
+  "publishedAt": "2026-09-19T11:20:57.447Z"
 }
