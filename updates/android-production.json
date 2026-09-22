@@ -1,8 +1,8 @@
 {
-  "version": "2026.0919.112055",
-  "url": "campus-2026.0919.112055.zip",
-  "sha256": "acbe0dd725a5088c02a7d06c29bf6f0d46223ca3f0989819a26f74130a810252",
-  "bytes": 906052,
-  "notes": "Faculty attendance, college logo, gallery, per-college designations, certificate verification, exam queries, four new importers, working outbox",
-  "publishedAt": "2026-09-19T11:20:57.447Z"
+  "version": "2026.0922.183320",
+  "url": "campus-2026.0922.183320.zip",
+  "sha256": "d19be1ddfcf161d6469395c2176e9311bc1a56cbab6eed266c06e7f3b70317a3",
+  "bytes": 931796,
+  "notes": "Import reports now name every skipped row and why; account receipts say where the invitation went.",
+  "publishedAt": "2026-09-22T18:33:22.521Z"
 }

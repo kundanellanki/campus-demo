@@ -18,7 +18,7 @@
  *      this worker, so a shared phone in a lab does not keep the last
  *      student's results.
  */
-const BUILD = "2026.0919.11";
+const BUILD = "2026.0922.18";
 const CACHE = `campus-${BUILD}`;
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg"];
 
