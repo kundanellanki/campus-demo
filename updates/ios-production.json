@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.034549",
-  "url": "campus-2026.0923.034549.zip",
-  "sha256": "f07ed2c146965f6299215b4b8a1068ac2f336035e2816543531b221c0e097a24",
-  "bytes": 937462,
+  "version": "2026.0923.034904",
+  "url": "campus-2026.0923.034904.zip",
+  "sha256": "47a3aaa85986404d09d4da3ee2f4d19361657485c7988fcfd12afb13e30aab1d",
+  "bytes": 937558,
   "notes": "The app can now see and fetch its own updates; three faculty portals on the demo",
-  "publishedAt": "2026-09-23T03:45:50.915Z"
+  "publishedAt": "2026-09-23T03:49:06.494Z"
 }
