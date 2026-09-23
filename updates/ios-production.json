@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.025826",
-  "url": "campus-2026.0923.025826.zip",
-  "sha256": "4d2dcf92ca9b5f358758002e1fd141e74b4ff1826711f454f8fe059da83c346a",
-  "bytes": 936656,
-  "notes": "Three Faculty Portals in the sample too: the Principal was missing from the demo dataset",
-  "publishedAt": "2026-09-23T02:58:34.042Z"
+  "version": "2026.0923.034549",
+  "url": "campus-2026.0923.034549.zip",
+  "sha256": "f07ed2c146965f6299215b4b8a1068ac2f336035e2816543531b221c0e097a24",
+  "bytes": 937462,
+  "notes": "The app can now see and fetch its own updates; three faculty portals on the demo",
+  "publishedAt": "2026-09-23T03:45:50.915Z"
 }
