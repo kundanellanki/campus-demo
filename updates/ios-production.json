@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.044853",
-  "url": "campus-2026.0923.044853.zip",
-  "sha256": "293486b737c1a1ab5f5e8ded9850f357292632c3baca61f142f862c25c2d9ca7",
-  "bytes": 938065,
-  "notes": "The department picker now fits on a phone screen",
-  "publishedAt": "2026-09-23T04:48:55.038Z"
+  "version": "2026.0923.120117",
+  "url": "campus-2026.0923.120117.zip",
+  "sha256": "1523e79b789157e34571177ed2fb82f42c912e3d1b9412d8a91855d073931339",
+  "bytes": 937467,
+  "notes": "Light theme only — the app no longer follows your phone's dark mode",
+  "publishedAt": "2026-09-23T12:01:18.460Z"
 }
