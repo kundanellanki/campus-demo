@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.034904",
-  "url": "campus-2026.0923.034904.zip",
-  "sha256": "47a3aaa85986404d09d4da3ee2f4d19361657485c7988fcfd12afb13e30aab1d",
-  "bytes": 937558,
-  "notes": "The app can now see and fetch its own updates; three faculty portals on the demo",
-  "publishedAt": "2026-09-23T03:49:06.494Z"
+  "version": "2026.0923.041348",
+  "url": "campus-2026.0923.041348.zip",
+  "sha256": "d55859268b5c5d679e2af7c536b273bec5b724fce80256958a4de8e72ee36b69",
+  "bytes": 937910,
+  "notes": "The app can now see its own update channel: which bundle it runs and which feed it asks",
+  "publishedAt": "2026-09-23T04:13:49.975Z"
 }
