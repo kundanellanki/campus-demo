@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.041348",
-  "url": "campus-2026.0923.041348.zip",
-  "sha256": "d55859268b5c5d679e2af7c536b273bec5b724fce80256958a4de8e72ee36b69",
-  "bytes": 937910,
-  "notes": "The app can now see its own update channel: which bundle it runs and which feed it asks",
-  "publishedAt": "2026-09-23T04:13:49.975Z"
+  "version": "2026.0923.044853",
+  "url": "campus-2026.0923.044853.zip",
+  "sha256": "293486b737c1a1ab5f5e8ded9850f357292632c3baca61f142f862c25c2d9ca7",
+  "bytes": 938065,
+  "notes": "The department picker now fits on a phone screen",
+  "publishedAt": "2026-09-23T04:48:55.038Z"
 }
