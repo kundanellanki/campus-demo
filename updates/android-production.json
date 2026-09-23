@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.120117",
-  "url": "campus-2026.0923.120117.zip",
-  "sha256": "1523e79b789157e34571177ed2fb82f42c912e3d1b9412d8a91855d073931339",
-  "bytes": 937467,
-  "notes": "Light theme only — the app no longer follows your phone's dark mode",
-  "publishedAt": "2026-09-23T12:01:18.460Z"
+  "version": "2026.0923.124931",
+  "url": "campus-2026.0923.124931.zip",
+  "sha256": "e92c133c57dd5548c0dd8019702e509989ad69f69295a49f20478f3b7009c6c2",
+  "bytes": 937565,
+  "notes": "Updates now install themselves — an update lands next time you open the app",
+  "publishedAt": "2026-09-23T12:49:32.424Z"
 }
