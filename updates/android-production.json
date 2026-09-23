@@ -1,8 +1,8 @@
 {
-  "version": "2026.0923.023946",
-  "url": "campus-2026.0923.023946.zip",
-  "sha256": "d3534052b77003399e6b4a66331e9f556cb26b534b1f2c2b88fc3706a0462890",
-  "bytes": 936339,
-  "notes": "The College Admin Portal: a doorway onto your college's own units, and three faculty portals instead of one",
-  "publishedAt": "2026-09-23T02:39:47.892Z"
+  "version": "2026.0923.025826",
+  "url": "campus-2026.0923.025826.zip",
+  "sha256": "4d2dcf92ca9b5f358758002e1fd141e74b4ff1826711f454f8fe059da83c346a",
+  "bytes": 936656,
+  "notes": "Three Faculty Portals in the sample too: the Principal was missing from the demo dataset",
+  "publishedAt": "2026-09-23T02:58:34.042Z"
 }
