@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.085617",
-  "url": "campus-2026.0925.085617.zip",
-  "sha256": "0856cf656f3cc0c7249269c01678d81dbc40f79051cd108cb2e899ecfb9b06f1",
-  "bytes": 948230,
-  "notes": "The dashboard now counts against the college's own attendance threshold, not a fixed 65%",
-  "publishedAt": "2026-09-25T08:56:19.967Z"
+  "version": "2026.0925.091429",
+  "url": "campus-2026.0925.091429.zip",
+  "sha256": "0e4bce1893ee82c497a5fa8b98fffe00df16573310a649a9e3e77a7383993607",
+  "bytes": 948396,
+  "notes": "A register that failed to save no longer reports itself as saved",
+  "publishedAt": "2026-09-25T09:14:31.904Z"
 }
