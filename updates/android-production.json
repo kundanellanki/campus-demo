@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.134632",
-  "url": "campus-2026.0925.134632.zip",
-  "sha256": "ed73186aef2926c3595cf10a07eeeae839090241cb5bdd49dd41af30a5ed0cb3",
-  "bytes": 948901,
-  "notes": "Settings to Messages now shows who the college cannot reach at all.",
-  "publishedAt": "2026-09-25T13:46:34.671Z"
+  "version": "2026.0925.140613",
+  "url": "campus-2026.0925.140613.zip",
+  "sha256": "4e5fe2b22d1095048fa3a60cdb5c112c8cb053feb05fff24dd344d34a8681429",
+  "bytes": 949310,
+  "notes": "The operator console can re-issue a college administrator's invitation and hand over the activation link.",
+  "publishedAt": "2026-09-25T14:06:14.480Z"
 }
