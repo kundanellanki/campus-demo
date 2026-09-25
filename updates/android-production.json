@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.073230",
-  "url": "campus-2026.0925.073230.zip",
-  "sha256": "2ad8c8df1d5fe12681eacf74b5071861aa286a7b5dbff57826603ed4e3dfcf1f",
-  "bytes": 947798,
-  "notes": "Attendance: whole-college office figures are cached; every student-facing figure stays live",
-  "publishedAt": "2026-09-25T07:32:31.616Z"
+  "version": "2026.0925.085617",
+  "url": "campus-2026.0925.085617.zip",
+  "sha256": "0856cf656f3cc0c7249269c01678d81dbc40f79051cd108cb2e899ecfb9b06f1",
+  "bytes": 948230,
+  "notes": "The dashboard now counts against the college's own attendance threshold, not a fixed 65%",
+  "publishedAt": "2026-09-25T08:56:19.967Z"
 }
