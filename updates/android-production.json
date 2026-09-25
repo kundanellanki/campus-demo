@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.181744",
-  "url": "campus-2026.0925.181744.zip",
-  "sha256": "3b6940a9ad690b4263d904ec2dba4b11d709237541b5a55e07a6994f94b9d72a",
-  "bytes": 961134,
-  "notes": "Admissions: enquiry to enrolment, with a merit list computed live",
-  "publishedAt": "2026-09-25T18:17:45.467Z"
+  "version": "2026.0925.184623",
+  "url": "campus-2026.0925.184623.zip",
+  "sha256": "fb4c980ede8bee9a49a80abf9526a9cd2aa98a9daeb81adaaf81d65eda73a586",
+  "bytes": 966944,
+  "notes": "Course registration: electives ranked and allotted by merit",
+  "publishedAt": "2026-09-25T18:46:25.382Z"
 }
