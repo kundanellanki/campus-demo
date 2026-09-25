@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.163803",
-  "url": "campus-2026.0925.163803.zip",
-  "sha256": "71c912a74f8565afebd529bb97517098ad4879780a6fe7c266bb50ca79289e00",
-  "bytes": 949214,
-  "notes": "The demo's colleges are now invented ones — no real institution is named",
-  "publishedAt": "2026-09-25T16:38:04.619Z"
+  "version": "2026.0925.164306",
+  "url": "campus-2026.0925.164306.zip",
+  "sha256": "f8f30d74112610feccc49bb68f7dbeb489e4c2897a5a5466284e6fabd92ee066",
+  "bytes": 949251,
+  "notes": "Demo colleges are invented; no real institution is named",
+  "publishedAt": "2026-09-25T16:43:08.092Z"
 }
