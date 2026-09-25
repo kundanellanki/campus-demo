@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.091429",
-  "url": "campus-2026.0925.091429.zip",
-  "sha256": "0e4bce1893ee82c497a5fa8b98fffe00df16573310a649a9e3e77a7383993607",
-  "bytes": 948396,
-  "notes": "A register that failed to save no longer reports itself as saved",
-  "publishedAt": "2026-09-25T09:14:31.904Z"
+  "version": "2026.0925.134632",
+  "url": "campus-2026.0925.134632.zip",
+  "sha256": "ed73186aef2926c3595cf10a07eeeae839090241cb5bdd49dd41af30a5ed0cb3",
+  "bytes": 948901,
+  "notes": "Settings to Messages now shows who the college cannot reach at all.",
+  "publishedAt": "2026-09-25T13:46:34.671Z"
 }
