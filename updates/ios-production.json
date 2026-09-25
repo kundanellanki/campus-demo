@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.060540",
-  "url": "campus-2026.0925.060540.zip",
-  "sha256": "2e053a4ca406201f9bc36d287826f0d4f98bddc723db5c9400b8de27437f77dd",
-  "bytes": 947769,
-  "notes": "Operator console for onboarding colleges; per-college fee payment accounts",
-  "publishedAt": "2026-09-25T06:05:42.200Z"
+  "version": "2026.0925.073230",
+  "url": "campus-2026.0925.073230.zip",
+  "sha256": "2ad8c8df1d5fe12681eacf74b5071861aa286a7b5dbff57826603ed4e3dfcf1f",
+  "bytes": 947798,
+  "notes": "Attendance: whole-college office figures are cached; every student-facing figure stays live",
+  "publishedAt": "2026-09-25T07:32:31.616Z"
 }
