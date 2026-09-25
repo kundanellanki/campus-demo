@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.140613",
-  "url": "campus-2026.0925.140613.zip",
-  "sha256": "4e5fe2b22d1095048fa3a60cdb5c112c8cb053feb05fff24dd344d34a8681429",
-  "bytes": 949310,
-  "notes": "The operator console can re-issue a college administrator's invitation and hand over the activation link.",
-  "publishedAt": "2026-09-25T14:06:14.480Z"
+  "version": "2026.0925.163803",
+  "url": "campus-2026.0925.163803.zip",
+  "sha256": "71c912a74f8565afebd529bb97517098ad4879780a6fe7c266bb50ca79289e00",
+  "bytes": 949214,
+  "notes": "The demo's colleges are now invented ones — no real institution is named",
+  "publishedAt": "2026-09-25T16:38:04.619Z"
 }
