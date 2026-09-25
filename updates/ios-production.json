@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.060046",
-  "url": "campus-2026.0925.060046.zip",
-  "sha256": "04ed9f16bde3ccd692212384940a08a8530dfb705b6de667b16a605880e20a91",
-  "bytes": 947746,
-  "notes": "Operator console: onboard a college and invite its administrator from the app; per-college fee payment accounts",
-  "publishedAt": "2026-09-25T06:00:49.112Z"
+  "version": "2026.0925.060540",
+  "url": "campus-2026.0925.060540.zip",
+  "sha256": "2e053a4ca406201f9bc36d287826f0d4f98bddc723db5c9400b8de27437f77dd",
+  "bytes": 947769,
+  "notes": "Operator console for onboarding colleges; per-college fee payment accounts",
+  "publishedAt": "2026-09-25T06:05:42.200Z"
 }
