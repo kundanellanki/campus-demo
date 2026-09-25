@@ -1,8 +1,8 @@
 {
-  "version": "2026.0925.175059",
-  "url": "campus-2026.0925.175059.zip",
-  "sha256": "d51d05392a1a646911b8c45243ae8c5a47ddf4c8fb6d0e496b08764a793c68d0",
-  "bytes": 953829,
-  "notes": "Outcome attainment: what the programme promised, and what the marks say",
-  "publishedAt": "2026-09-25T17:51:00.430Z"
+  "version": "2026.0925.181744",
+  "url": "campus-2026.0925.181744.zip",
+  "sha256": "3b6940a9ad690b4263d904ec2dba4b11d709237541b5a55e07a6994f94b9d72a",
+  "bytes": 961134,
+  "notes": "Admissions: enquiry to enrolment, with a merit list computed live",
+  "publishedAt": "2026-09-25T18:17:45.467Z"
 }
