@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.054651",
-  "url": "campus-2026.0926.054651.zip",
-  "sha256": "cedf36f19fc41d1e1a97fb031f43541a69708672c28461e933ebdc3f10aa570d",
-  "bytes": 993771,
-  "notes": "Timetables are generated now: a year group at a time, with what it could not place",
-  "publishedAt": "2026-09-26T05:46:53.148Z"
+  "version": "2026.0926.062022",
+  "url": "campus-2026.0926.062022.zip",
+  "sha256": "5a65a069e9097134037d8391d248fc611406a65ccb3e65e7f01eea08ba1ae90d",
+  "bytes": 1002687,
+  "notes": "The mess: what it cost divided by the days people ate, with the arithmetic shown",
+  "publishedAt": "2026-09-26T06:20:23.762Z"
 }
