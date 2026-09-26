@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.043535",
-  "url": "campus-2026.0926.043535.zip",
-  "sha256": "a52b3d7a69da4606b68941d476105948948881dec22c99b58e9a90f02a7311d2",
-  "bytes": 983577,
-  "notes": "Accreditation: the fifteen statutory figures, each with the records it came from",
-  "publishedAt": "2026-09-26T04:35:37.366Z"
+  "version": "2026.0926.050331",
+  "url": "campus-2026.0926.050331.zip",
+  "sha256": "342287f6661e35376b844b57e9ba3a4382e5c01d5d72b7dccde378dcff341972",
+  "bytes": 987365,
+  "notes": "Moving in: prior semesters and opening balances import, sequenced",
+  "publishedAt": "2026-09-26T05:03:33.400Z"
 }
