@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.094054",
-  "url": "campus-2026.0926.094054.zip",
-  "sha256": "7fd2f1171d491d7880c5b643d03befdf3324ed9fd1690f5b2395eb5c50eddb20",
-  "bytes": 1045549,
-  "notes": "The parent's side: one message a day, and a parent who can answer it",
-  "publishedAt": "2026-09-26T09:40:55.991Z"
+  "version": "2026.0926.101402",
+  "url": "campus-2026.0926.101402.zip",
+  "sha256": "b7e5edf21115d75e26e25e6f28a2032a11501e0c1f1e4e32cdb01129c3f6ed75",
+  "bytes": 1055187,
+  "notes": "Digital evaluation: dummy numbers, two blind valuations, and a third when they disagree",
+  "publishedAt": "2026-09-26T10:14:04.544Z"
 }
