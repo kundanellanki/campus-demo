@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.031537",
-  "url": "campus-2026.0926.031537.zip",
-  "sha256": "30d7bf53d8ae57092c265576e95c5009643a87e25d5076a39693b24020715bd5",
-  "bytes": 973029,
-  "notes": "Attendance by a rotating code, and readers that push",
-  "publishedAt": "2026-09-26T03:15:39.108Z"
+  "version": "2026.0926.032944",
+  "url": "campus-2026.0926.032944.zip",
+  "sha256": "36ed3abf369e8c540d683d624d32032332e350583f0e76cd8d35466ca20e5ac1",
+  "bytes": 976602,
+  "notes": "Applicants can apply: the admissions door on the sign-in screen",
+  "publishedAt": "2026-09-26T03:29:45.702Z"
 }
