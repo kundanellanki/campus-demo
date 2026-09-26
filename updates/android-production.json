@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.071626",
-  "url": "campus-2026.0926.071626.zip",
-  "sha256": "ef784c34cd583b1ece4c448b92d72883f7144ceb3e75d4e4f93f05c7d3d844f2",
-  "bytes": 1017218,
-  "notes": "Service records, appraisals and applicants: a staff member has a history and a pay of their own",
-  "publishedAt": "2026-09-26T07:16:28.091Z"
+  "version": "2026.0926.080433",
+  "url": "campus-2026.0926.080433.zip",
+  "sha256": "ec6b8dec72be545e29c9fe46198ec9d057a9961cbbc24aaf071c2b103bbeabbe",
+  "bytes": 1028936,
+  "notes": "Purchasing: a requisition, the quotes against it, the order, what arrived and what was paid",
+  "publishedAt": "2026-09-26T08:04:35.152Z"
 }
