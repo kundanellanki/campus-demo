@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.062022",
-  "url": "campus-2026.0926.062022.zip",
-  "sha256": "5a65a069e9097134037d8391d248fc611406a65ccb3e65e7f01eea08ba1ae90d",
-  "bytes": 1002687,
-  "notes": "The mess: what it cost divided by the days people ate, with the arithmetic shown",
-  "publishedAt": "2026-09-26T06:20:23.762Z"
+  "version": "2026.0926.065012",
+  "url": "campus-2026.0926.065012.zip",
+  "sha256": "23c68b392e3520284101fbb6c29aeec2fa81ba1d969798ad8c65577876e07fc9",
+  "bytes": 1010526,
+  "notes": "Graduating a batch, and an alumni register the graduates can update themselves",
+  "publishedAt": "2026-09-26T06:50:14.640Z"
 }
