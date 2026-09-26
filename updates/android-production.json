@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.080433",
-  "url": "campus-2026.0926.080433.zip",
-  "sha256": "ec6b8dec72be545e29c9fe46198ec9d057a9961cbbc24aaf071c2b103bbeabbe",
-  "bytes": 1028936,
-  "notes": "Purchasing: a requisition, the quotes against it, the order, what arrived and what was paid",
-  "publishedAt": "2026-09-26T08:04:35.152Z"
+  "version": "2026.0926.084958",
+  "url": "campus-2026.0926.084958.zip",
+  "sha256": "e01a717b57a1abbb70ec7f6d7293d67d8f25f3e5b518e440575289b7d1552b34",
+  "bytes": 1039642,
+  "notes": "The buses: fares by distance, a stop with a time on it, and a record that the bus ran",
+  "publishedAt": "2026-09-26T08:50:00.095Z"
 }
