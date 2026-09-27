@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.092931",
-  "url": "campus-2026.0927.092931.zip",
-  "sha256": "b71501b9737db21a6dd2a6d7941f6e30396cff07296f4cfb356ce4ec6a24a48e",
-  "bytes": 1089390,
-  "notes": "Colour on the cards: a hue per area, on tiles and in the sidebar",
-  "publishedAt": "2026-09-27T09:29:32.875Z"
+  "version": "2026.0927.094913",
+  "url": "campus-2026.0927.094913.zip",
+  "sha256": "1cdfe466fa7a874a03d0f1c99358169933fd3450bb939e3fd1b4543e2578dc70",
+  "bytes": 1090364,
+  "notes": "Mona says hello by name, and understands you even when the spelling slips",
+  "publishedAt": "2026-09-27T09:49:15.341Z"
 }
