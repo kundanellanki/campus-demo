@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.091117",
-  "url": "campus-2026.0927.091117.zip",
-  "sha256": "a990ba3b7488be70f0be993e56deb96b9903ad5066ca5a9e072a123d490da6a2",
-  "bytes": 1089115,
-  "notes": "A light glass theme, and Mona in the corner to find things",
-  "publishedAt": "2026-09-27T09:11:23.594Z"
+  "version": "2026.0927.092931",
+  "url": "campus-2026.0927.092931.zip",
+  "sha256": "b71501b9737db21a6dd2a6d7941f6e30396cff07296f4cfb356ce4ec6a24a48e",
+  "bytes": 1089390,
+  "notes": "Colour on the cards: a hue per area, on tiles and in the sidebar",
+  "publishedAt": "2026-09-27T09:29:32.875Z"
 }
