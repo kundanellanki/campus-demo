@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.123336",
-  "url": "campus-2026.0927.123336.zip",
-  "sha256": "4d1125d091c86b4289dc6131af0b9d7ba66c4325ec8e7d6a434d4fb29e8caa10",
-  "bytes": 1100868,
-  "notes": "Department portals and a Campus Admin Portal: the office can now create the college's other portals, and invite administrators",
-  "publishedAt": "2026-09-27T12:33:42.253Z"
+  "version": "2026.0927.125244",
+  "url": "campus-2026.0927.125244.zip",
+  "sha256": "c66fdce4e1636eb4f42f51e9e129b3fd04bed803665a106ad98c575368a91029",
+  "bytes": 1101056,
+  "notes": "Portals & units shows the college's org chart, and the Office says what it reaches",
+  "publishedAt": "2026-09-27T12:52:45.941Z"
 }
