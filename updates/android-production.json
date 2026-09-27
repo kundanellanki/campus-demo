@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.125244",
-  "url": "campus-2026.0927.125244.zip",
-  "sha256": "c66fdce4e1636eb4f42f51e9e129b3fd04bed803665a106ad98c575368a91029",
-  "bytes": 1101056,
-  "notes": "Portals & units shows the college's org chart, and the Office says what it reaches",
-  "publishedAt": "2026-09-27T12:52:45.941Z"
+  "version": "2026.0927.132941",
+  "url": "campus-2026.0927.132941.zip",
+  "sha256": "9ada6c7e7346cfdcec4fa574dc083d53d6b6f2d500312224c9bb6897ce6238ea",
+  "bytes": 1101558,
+  "notes": "Sign in as Department or Administration — the two doors are now on the sign-in screen, not after it",
+  "publishedAt": "2026-09-27T13:29:42.492Z"
 }
