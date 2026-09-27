@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.132941",
-  "url": "campus-2026.0927.132941.zip",
-  "sha256": "9ada6c7e7346cfdcec4fa574dc083d53d6b6f2d500312224c9bb6897ce6238ea",
-  "bytes": 1101558,
-  "notes": "Sign in as Department or Administration — the two doors are now on the sign-in screen, not after it",
-  "publishedAt": "2026-09-27T13:29:42.492Z"
+  "version": "2026.0927.140033",
+  "url": "campus-2026.0927.140033.zip",
+  "sha256": "df791ed8d93e1dc7d9f49c52481a5c1a0a15c462e79cca6131be2e7d5858f53b",
+  "bytes": 1103236,
+  "notes": "Parent accounts: the office can now create every login a college needs",
+  "publishedAt": "2026-09-27T14:00:34.964Z"
 }
