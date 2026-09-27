@@ -1,8 +1,8 @@
 {
-  "version": "2026.0926.101402",
-  "url": "campus-2026.0926.101402.zip",
-  "sha256": "b7e5edf21115d75e26e25e6f28a2032a11501e0c1f1e4e32cdb01129c3f6ed75",
-  "bytes": 1055187,
-  "notes": "Digital evaluation: dummy numbers, two blind valuations, and a third when they disagree",
-  "publishedAt": "2026-09-26T10:14:04.544Z"
+  "version": "2026.0927.091117",
+  "url": "campus-2026.0927.091117.zip",
+  "sha256": "a990ba3b7488be70f0be993e56deb96b9903ad5066ca5a9e072a123d490da6a2",
+  "bytes": 1089115,
+  "notes": "A light glass theme, and Mona in the corner to find things",
+  "publishedAt": "2026-09-27T09:11:23.594Z"
 }
