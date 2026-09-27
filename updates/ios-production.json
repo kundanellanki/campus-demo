@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.104012",
-  "url": "campus-2026.0927.104012.zip",
-  "sha256": "5ad799465fb48d8e1dc2e113d6576633dd4f1ede41204866afb2e876d1997890",
-  "bytes": 1095861,
-  "notes": "A student illustration in the Campus AI hero",
-  "publishedAt": "2026-09-27T10:40:14.692Z"
+  "version": "2026.0927.104911",
+  "url": "campus-2026.0927.104911.zip",
+  "sha256": "bbdfaa7151888ea11fdc47c40e564db26f5f56e2a2cefd149a48425bb5f47b03",
+  "bytes": 1095867,
+  "notes": "Fix: the bug reporter was covering Logout in the sidebar",
+  "publishedAt": "2026-09-27T10:49:13.229Z"
 }
