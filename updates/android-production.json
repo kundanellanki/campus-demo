@@ -1,8 +1,8 @@
 {
-  "version": "2026.0927.143652",
-  "url": "campus-2026.0927.143652.zip",
-  "sha256": "bc041f975e2d642c9e8d5ced6c986339ee4ed3b92414c6362368e913b689b8fc",
-  "bytes": 1103463,
-  "notes": "A department login opens its own department straight away — no portal chooser",
-  "publishedAt": "2026-09-27T14:36:54.680Z"
+  "version": "2026.0928.035831",
+  "url": "campus-2026.0928.035831.zip",
+  "sha256": "36d85b0be1c009dad53a5f3e33d1d5e05f46b7bbc04a52c3d614963e7a8454a4",
+  "bytes": 1104643,
+  "notes": "One Administration login; Portals & units can add and close departments; the college logo works",
+  "publishedAt": "2026-09-28T03:58:32.552Z"
 }
