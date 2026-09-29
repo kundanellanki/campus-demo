@@ -1,8 +1,8 @@
 {
-  "version": "2026.0928.035831",
-  "url": "campus-2026.0928.035831.zip",
-  "sha256": "36d85b0be1c009dad53a5f3e33d1d5e05f46b7bbc04a52c3d614963e7a8454a4",
-  "bytes": 1104643,
-  "notes": "One Administration login; Portals & units can add and close departments; the college logo works",
-  "publishedAt": "2026-09-28T03:58:32.552Z"
+  "version": "2026.0929.154007",
+  "url": "campus-2026.0929.154007.zip",
+  "sha256": "583af65c7d3ccc3d652faaae5bd8eb9181573f444b981646cd37a792df980b20",
+  "bytes": 1111230,
+  "notes": "A head of department can decide corrections; the office can add programmes, sections and terms, and give imported staff a login",
+  "publishedAt": "2026-09-29T15:40:08.605Z"
 }
