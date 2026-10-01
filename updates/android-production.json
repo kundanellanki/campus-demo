@@ -1,8 +1,8 @@
 {
-  "version": "2026.1001.013738",
-  "url": "campus-2026.1001.013738.zip",
-  "sha256": "7e0c08520626ebbc67cfbd8d8f69a8cc2585a98728e790ae7e9e7a5cddf8311b",
-  "bytes": 1113309,
-  "notes": "Audit fixes: a lecturer sees only their own students, hall tickets stop verifying when blocked, imports actually send their invitations, and attendance decisions cannot be undone by the people they were about",
-  "publishedAt": "2026-10-01T01:37:39.713Z"
+  "version": "2026.10.01.1106",
+  "url": "campus-2026.10.01.1106.zip",
+  "sha256": "fb36083f898e77eadb38aa8f997699ae1b7289b729379962fa821ef5f489b30c",
+  "bytes": 1115542,
+  "notes": "A student with no result is no longer shown as CGPA 0 to employers, and an unmarked register no longer reads as 0% attendance",
+  "publishedAt": "2026-10-01T15:43:41.107Z"
 }
