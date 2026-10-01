@@ -1,8 +1,8 @@
 {
-  "version": "2026.0929.154007",
-  "url": "campus-2026.0929.154007.zip",
-  "sha256": "583af65c7d3ccc3d652faaae5bd8eb9181573f444b981646cd37a792df980b20",
-  "bytes": 1111230,
-  "notes": "A head of department can decide corrections; the office can add programmes, sections and terms, and give imported staff a login",
-  "publishedAt": "2026-09-29T15:40:08.605Z"
+  "version": "2026.1001.013738",
+  "url": "campus-2026.1001.013738.zip",
+  "sha256": "7e0c08520626ebbc67cfbd8d8f69a8cc2585a98728e790ae7e9e7a5cddf8311b",
+  "bytes": 1113309,
+  "notes": "Audit fixes: a lecturer sees only their own students, hall tickets stop verifying when blocked, imports actually send their invitations, and attendance decisions cannot be undone by the people they were about",
+  "publishedAt": "2026-10-01T01:37:39.713Z"
 }
